@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'calc';
+    src: url('./media/calculator-webfont.woff2') format('woff2'),
+         url('./media/calculator-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+}
+h1{
+	font-size: 30px;
+}
+.calculator{
+	height: 80vh;
+	width: 500px;
+	margin: 50px auto;
+	background-color: lightblue;
+	border: 3px solid black;
+	border-radius: 5%;
+}
+.calcTitle{
+	text-align: center;
+}
+.display{
+	font-family: calc, arial, sans-serif;
+    font-size: 50px;
+    height: 10vh;
+    text-align: right;
+    width: 90%;
+    margin: 0px auto;
+    background-color: #cec8c8;
+}
+.buttons{
+	width: 90%;
+	margin: 15px auto;
+	display: grid;
+	grid-gap: 4px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-areas:
+		'AC AC delete divi'
+		'seven eight nine multiple'
+		'four five six minus'
+		'one two three plus'
+		'zer zer period equal';
+}
+.buttons p{
+	display: block;
+	margin: 20px 0;
+	vertical-align: middle;
+}
+.number, .operator, .clear, .solve, .period, .backspace{
+    border: 1px solid #efc4b6;
+    text-align: center;
+    background-color: white;
+    border-radius: 11%;
+
+}
+.number, .period{
+    background-color: #ffffff;
+    color: #8bff1e;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.operator, .solve{
+    background-color: #921eff;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.clear, .backspace{
+	background-color: #ff921e;
+	color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.number:hover, .operator:hover, .clear:hover, .solve:hover, .period:hover, .backspace:hover{
+	transform: scale(1.1);
+}
+.clear[data-key="AC"]{
+	grid-area: AC;
+}
+.number[data-key="9"]{
+	grid-area: nine;
+}
+.number[data-key="8"]{
+	grid-area: eight;
+}
+.number[data-key="7"]{
+	grid-area: seven;
+}
+.number[data-key="6"]{
+	grid-area: six;
+}
+.number[data-key="5"]{
+	grid-area: five;
+}
+.number[data-key="4"]{
+	grid-area: four;
+}
+.number[data-key="3"]{
+	grid-area: three;
+}
+.number[data-key="2"]{
+	grid-area: two;
+}
+.number[data-key="1"]{
+	grid-area: one;
+}
+.number[data-key="0"]{
+	grid-area: zer;
+}
+.operator[data-key="+"]{
+	grid-area: plus;
+}
+.operator[data-key="-"]{
+	grid-area: minus;
+}
+.operator[data-key="*"]{
+	grid-area: multiple;
+}
+.operator[data-key="/"]{
+	grid-area: divi;
+}
+.solve[data-key="="]{
+	grid-area: equal;
+}
+.period[data-key="."]{
+	grid-area: period;
+}
+.backspace[data-key="<<"]{
+	grid-area: delete;
+}
